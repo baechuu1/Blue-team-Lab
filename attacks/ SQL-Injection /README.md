@@ -68,6 +68,7 @@ index=lab "/rest/user/login"
 ```
 
 ## 📸 Splunk Detection
+![Detect](screenshots/detect.png)
 ![Failed login](screenshots/failed-login.png)
 ## 🧬 MITRE ATT&CK Mapping
 - T1190 – Exploit Public-Facing Application
