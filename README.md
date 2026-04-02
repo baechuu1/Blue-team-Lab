@@ -1,6 +1,7 @@
 ### 🛡️ Blue Team Detection Lab
 
 
+
 ## 📊 Project Highlights
 
 - 🔍 SIEM Analysis with Splunk
@@ -8,6 +9,8 @@
 - 📂 Log Analysis (Linux)
 - 🧬 MITRE ATT&CK Mapping
 - ⚔️ Attack Simulation (Red → Blue perspective)
+
+
 
 ## 📌 Overview
 
@@ -23,6 +26,8 @@ Each attack scenario follows a structured workflow:
 
 ---
 
+
+
 ## 🧪 Lab Environment
 
 | Component        | Description                |
@@ -31,6 +36,8 @@ Each attack scenario follows a structured workflow:
 | 🐧 Ubuntu Server | Target system             |
 | 📊 Splunk SIEM   | Log ingestion & analysis  |
 | 🌐 Host-Only Network | Isolated attack simulation |
+
+
 
 
 ## ⚔️ Attack Scenarios
@@ -43,6 +50,8 @@ Each attack scenario follows a structured workflow:
 | 🔁 Lateral Movement | Internal pivoting between systems | ⏳ Planned |
 | 🧩 Persistence | Maintaining access | ⏳ Planned |
 | 📡 Beaconing | Simulated command & control traffic | ⏳ Planned |
+
+
 
 📂 Project Structure
 
@@ -60,9 +69,13 @@ blue-team-lab/
 └── README.md
 ```
 
+
+
 ## 🎯 Objective
 
 Build a practical understanding of how cyber attacks are executed and how defenders detect, analyze, and respond using SIEM tools.
+
+
 
 ## 🧠 Key Concepts Demonstrated
 
@@ -74,6 +87,8 @@ Build a practical understanding of how cyber attacks are executed and how defend
 | 🕵️ Analysis | IOC Identification, Post-Compromise Activity |
 | 🛡️ Defense | Mitigation Strategies, Hardening Techniques |
 
+
+
 ## 🚀 Roadmap
 
 - [x] 🔐 SSH Brute Force Detection  
@@ -82,6 +97,8 @@ Build a practical understanding of how cyber attacks are executed and how defend
 - [ ] 🔁 Lateral Movement Simulation  
 - [ ] 🧩 Persistence Techniques Detection  
 - [ ] 📡 Beaconing / C2 Detection  
+
+
 
 ## ⚠️ Disclaimer
 
