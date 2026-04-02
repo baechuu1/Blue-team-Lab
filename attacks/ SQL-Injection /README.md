@@ -59,25 +59,29 @@ index=lab "/rest/products/search"
 | table _time clientip method uri status
 ```
 🔍 Decode the Query String for Visibility
+spl```
 index=lab "/rest/products/search"
 | eval decoded=urldecode(uri_query)
 | table _time clientip decoded status
+```
 📊 Identify Error Responses from Suspicious Requests
+spl```
 index=lab "/rest/products/search"
 | eval raw=lower(_raw)
 | where like(raw,"%or 1=1%") OR like(raw,"%--%")
 | stats count by clientip, status, uri
+```
 📸 Splunk Detection
 
 🧬 MITRE ATT&CK Mapping
-T1190 – Exploit Public-Facing Application
+- T1190 – Exploit Public-Facing Application
 🛡️ Mitigation & Defense
-Use parameterized queries / prepared statements
-Validate and sanitize user input
-Restrict detailed database error messages returned to users
-Deploy a Web Application Firewall (WAF)
-Continuously monitor HTTP logs for suspicious query strings and abnormal response codes
-Apply least privilege to backend database accounts
+- Use parameterized queries / prepared statements
+- Validate and sanitize user input
+- Restrict detailed database error messages returned to users
+- Deploy a Web Application Firewall (WAF)
+- Continuously monitor HTTP logs for suspicious query strings and abnormal response codes
+- Apply least privilege to backend database accounts
 💻 Detection Outcome
 
 The SQL injection attempt generated a suspicious request pattern containing SQL keywords in a user-controlled parameter. The request triggered an HTTP 500 response, suggesting that malicious input reached backend application logic and caused abnormal processing.
