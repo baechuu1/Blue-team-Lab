@@ -38,8 +38,6 @@ Example request:
 
 Because the payload was placed in a GET parameter instead of a POST body, the injected SQL pattern was visible in Apache access logs and searchable in Splunk.
 
-📸 Attack Simulation
-![Successful Login](screenshots/successful-login.png)
 ## 🔎 Key Observations
 - A suspicious SQL-like pattern was observed in the q parameter of the search endpoint
 - The request targeted /rest/products/search
@@ -48,7 +46,9 @@ Because the payload was placed in a GET parameter instead of a POST body, the in
 - Splunk successfully parsed the request fields, including clientip, uri, uri_query, and status
 
 
-## 🔍 Detection in Splunk
+📸 Attack Simulation
+![sql attack](screenshots/sql-attack.png)
+![login attempt](screenshots/login-attempt.png)
 
 ## 🚨 Detect SQL Injection Patterns
 
@@ -58,7 +58,8 @@ index=lab "/rest/products/search"
 | where like(raw,"%or 1=1%") OR like(raw,"%--%") OR like(raw,"%union%")
 | table _time clientip method uri status
 ```
-
+## 📸 Splunk Detection
+![sql attack detect](screenshots/sql-attack-detect.png)
 
 🔍 Detect Abnormal Response Patterns
 ```spl
@@ -68,7 +69,7 @@ index=lab "/rest/user/login"
 ```
 
 ## 📸 Splunk Detection
-
+![Failed login](screenshots/Failed-login.png)
 ## 🧬 MITRE ATT&CK Mapping
 - T1190 – Exploit Public-Facing Application
 
