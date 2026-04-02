@@ -54,6 +54,8 @@ spl```
 index=lab "/rest/products/search"
 | table _time clientip method uri status
 ```
+---
+
 ## 🚨 Detect SQL Injection Patterns
 spl```
 index=lab "/rest/products/search"
