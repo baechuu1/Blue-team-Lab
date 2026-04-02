@@ -32,13 +32,14 @@ This technique can be used to bypass authentication, retrieve unauthorized data,
 The SQL injection attempt was simulated by sending malicious input through the Juice Shop search endpoint using a URL parameter.
 
 Example request:
-spl```
-/rest/products/search?q=test' OR 1=1--```
+```spl
+/rest/products/search?q=test' OR 1=1--
+```
 
 Because the payload was placed in a GET parameter instead of a POST body, the injected SQL pattern was visible in Apache access logs and searchable in Splunk.
 
 📸 Attack Simulation
-
+![Successful Login](screenshots/successful-login.png)
 ## 🔎 Key Observations
 - A suspicious SQL-like pattern was observed in the q parameter of the search endpoint
 - The request targeted /rest/products/search
@@ -51,18 +52,20 @@ Because the payload was placed in a GET parameter instead of a POST body, the in
 
 ## 🚨 Detect SQL Injection Patterns
 
-spl```
+```spl
 index=lab "/rest/products/search"
 | eval raw=lower(_raw)
 | where like(raw,"%or 1=1%") OR like(raw,"%--%") OR like(raw,"%union%")
-| table _time clientip method uri status```
+| table _time clientip method uri status
+```
 
 
 🔍 Detect Abnormal Response Patterns
-spl```
+```spl
 index=lab "/rest/user/login"
 | stats count by clientip, status
-| sort - count```
+| sort - count
+```
 
 ## 📸 Splunk Detection
 
