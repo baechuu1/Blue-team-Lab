@@ -45,8 +45,8 @@ Each attack scenario follows a structured workflow:
 | Attack | Description | Status |
 |--------|------------|--------|
 | 🔐 SSH Brute Force | Credential attack using Hydra | ✅ Completed |
-| 💉 SQL Injection | Web application exploitation | 🔄 In Progress |
-| 🎯 Password Spraying | Low-and-slow authentication attack | ⏳ Planned |
+| 💉 SQL Injection | Web application exploitation | ✅ Completed |
+| 🎯 Password Spraying | Low-and-slow authentication attack | 🔄 In Progress |
 | 🔁 Lateral Movement | Internal pivoting between systems | ⏳ Planned |
 | 🧩 Persistence | Maintaining access | ⏳ Planned |
 | 📡 Beaconing | Simulated command & control traffic | ⏳ Planned |
@@ -92,7 +92,7 @@ Build a practical understanding of how cyber attacks are executed and how defend
 ## 🚀 Roadmap
 
 - [x] 🔐 SSH Brute Force Detection  
-- [ ] 💉 SQL Injection Detection  
+- [x] 💉 SQL Injection Detection  
 - [ ] 🎯 Password Spraying Detection  
 - [ ] 🔁 Lateral Movement Simulation  
 - [ ] 🧩 Persistence Techniques Detection  
