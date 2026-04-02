@@ -89,7 +89,3 @@ The SQL injection attempt generated a suspicious request pattern containing SQL 
 By ingesting Apache access logs into Splunk, the attack was detectable through request pattern analysis, suspicious query parameters, and anomalous response codes.
 
 
-## ⚠️ Disclaimer
-
-This project is for educational purposes only. All activity was performed in a controlled lab environment using intentionally vulnerable systems owned by the researcher.
-
