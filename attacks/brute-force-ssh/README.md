@@ -48,21 +48,26 @@ index=lab "Failed password"
 
 🚨 Detect Successful Login After Failures
 ```spl
-index=lab ("Failed password" OR "Accepted password")
-| transaction rhost maxspan=5m
+index=lab "Accepted password"
 ```
 ![Successful Login](successful-login.png)
 
-🧬 MITRE ATT&CK Mapping
-T1110 – Brute Force
+## 🧬 MITRE ATT&CK Mapping
 
-🛡️ Mitigation & Defense
-Enforce account lockout policies
-Enable Multi-Factor Authentication (MFA)
-Restrict SSH access to trusted IP ranges
-Deploy intrusion prevention tools (e.g., fail2ban)
-Continuously monitor authentication logs
+- **T1110 – Brute Force**
 
-💻 Post-Compromise Access
+---
+
+## 🛡️ Mitigation & Defense
+
+- Enforce account lockout policies  
+- Enable Multi-Factor Authentication (MFA)  
+- Restrict SSH access to trusted IP ranges  
+- Deploy intrusion prevention tools (e.g., fail2ban)  
+- Continuously monitor authentication logs  
+
+---
+
+## 💻 Post-Compromise Access
 
 After obtaining valid credentials, SSH access to the target system was successfully established.
