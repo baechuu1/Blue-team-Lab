@@ -1,7 +1,7 @@
-###🛡️ Blue Team Detection Lab
+### 🛡️ Blue Team Detection Lab
 
 
-##📊 Project Highlights
+## 📊 Project Highlights
 
 - 🔍 SIEM Analysis with Splunk
 - 🧠 Threat Detection & Investigation
@@ -9,7 +9,7 @@
 - 🧬 MITRE ATT&CK Mapping
 - ⚔️ Attack Simulation (Red → Blue perspective)
 
-##📌 Overview
+## 📌 Overview
 
 This project is a hands-on Blue Team lab designed to simulate real-world cyber attacks and demonstrate detection and analysis using Splunk Enterprise.
 
@@ -60,32 +60,30 @@ blue-team-lab/
 └── README.md
 ```
 
-##🎯 Objective
+## 🎯 Objective
 
 Build a practical understanding of how cyber attacks are executed and how defenders detect, analyze, and respond using SIEM tools.
 
-##🧠 Key Concepts Demonstrated
-Authentication attack detection
-Log correlation and analysis
-Identifying Indicators of Compromise (IOCs)
-Post-compromise investigation
-Real-world SOC workflows
+## 🧠 Key Concepts Demonstrated
 
-##🚀 Roadmap
+| Category | Skills |
+|----------|--------|
+| 🔍 Detection | SIEM Analysis, Log Analysis |
+| 🚨 Investigation | Incident Triage, Event Correlation |
+| 🧬 Threat Mapping | MITRE ATT&CK (T1110 – Brute Force) |
+| 🕵️ Analysis | IOC Identification, Post-Compromise Activity |
+| 🛡️ Defense | Mitigation Strategies, Hardening Techniques |
 
-SSH Brute Force Detection
+## 🚀 Roadmap
 
-SQL Injection Detection
+- [x] 🔐 SSH Brute Force Detection  
+- [ ] 💉 SQL Injection Detection  
+- [ ] 🎯 Password Spraying Detection  
+- [ ] 🔁 Lateral Movement Simulation  
+- [ ] 🧩 Persistence Techniques Detection  
+- [ ] 📡 Beaconing / C2 Detection  
 
-Password Spraying Detection
-
-Lateral Movement Simulation
-
-Persistence Techniques Detection
-
-Beaconing / C2 Detection
-
-##⚠️ Disclaimer
+## ⚠️ Disclaimer
 
 This project is for educational purposes only.
 All attacks are performed in a controlled lab environment.
