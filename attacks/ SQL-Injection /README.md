@@ -49,13 +49,6 @@ Because the payload was placed in a GET parameter instead of a POST body, the in
 
 ## 🔍 Detection in Splunk
 
-## 🔐 Detect Requests to the Search Endpoint
-spl```
-index=lab "/rest/products/search"
-| table _time clientip method uri status
-```
----
-
 ## 🚨 Detect SQL Injection Patterns
 spl```
 index=lab "/rest/products/search"
@@ -63,18 +56,13 @@ index=lab "/rest/products/search"
 | where like(raw,"%or 1=1%") OR like(raw,"%--%") OR like(raw,"%union%")
 | table _time clientip method uri status
 ```
-## 🔍 Decode the Query String for Visibility
+---
+
+🔍 Detect Abnormal Response Patterns
 spl```
-index=lab "/rest/products/search"
-| eval decoded=urldecode(uri_query)
-| table _time clientip decoded status
-```
-## 📊 Identify Error Responses from Suspicious Requests
-spl```
-index=lab "/rest/products/search"
-| eval raw=lower(_raw)
-| where like(raw,"%or 1=1%") OR like(raw,"%--%")
-| stats count by clientip, status, uri
+index=lab "/rest/user/login"
+| stats count by clientip, status
+| sort - count
 ```
 ## 📸 Splunk Detection
 
