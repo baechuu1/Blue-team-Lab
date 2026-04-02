@@ -30,7 +30,7 @@ From Kali Linux, a brute force attack was conducted using Hydra:
 ```bash
 hydra -l <username> -P password.txt ssh://<target-ip>
 ```
-![Hydra Attack](hydra-attack.png)
+![Hydra Attack](screenshots/hydra-attack.png)
 
 🔎 Key Observations
 High volume of failed login attempts
@@ -44,13 +44,13 @@ index=lab "Failed password"
 | stats count by rhost, user
 | where count > 5
 ```
-![Failed Password Attempt](Failed-password-attempt.png)
+![Failed Password Attempt](screenshots/Failed-password-attempt.png)
 
 🚨 Detect Successful Login After Failures
 ```spl
 index=lab "Accepted password"
 ```
-![Successful Login](successful-login.png)
+![Successful Login](screenshots/successful-login.png)
 
 ## 🧬 MITRE ATT&CK Mapping
 
