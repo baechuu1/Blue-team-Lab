@@ -39,13 +39,15 @@ Successful authentication following multiple failures
 
 🔍 Detection in Splunk
 🔐 Detect Failed Login Attempts
+```spl
 index=lab "Failed password"
 | stats count by rhost, user
 | where count > 5
 
-<img src="Failed-password-attempt.png" width="700">
+<img src="Failed-password-attempt.png" width="700">```
 
 🚨 Detect Successful Login After Failures
+```spl
 index=lab ("Failed password" OR "Accepted password")
 | transaction rhost maxspan=5m
 
