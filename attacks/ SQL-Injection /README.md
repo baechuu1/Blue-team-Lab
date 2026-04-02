@@ -20,7 +20,6 @@ This technique can be used to bypass authentication, retrieve unauthorized data,
 
 ### Logs Monitored
 - `/var/log/apache2/juice_access.log`
-- `/var/log/apache2/juice_error.log`
 
 ### Network Setup
 - Host-only adapter (isolated lab environment)
@@ -46,8 +45,9 @@ Because the payload was placed in a GET parameter instead of a POST body, the in
 - Splunk successfully parsed the request fields, including clientip, uri, uri_query, and status
 
 
-📸 Attack Simulation
+## 📸 Attack Simulation
 ![sql attack](screenshots/sql-attack.png)
+
 ![login attempt](screenshots/login-attempt.png)
 
 ## 🚨 Detect SQL Injection Patterns
@@ -55,8 +55,7 @@ Because the payload was placed in a GET parameter instead of a POST body, the in
 ```spl
 index=lab "/rest/products/search"
 | eval raw=lower(_raw)
-| where like(raw,"%or 1=1%") OR like(raw,"%--%") OR like(raw,"%union%")
-| table _time clientip method uri status
+| where like(raw,"%or 1=1%") OR like(raw,"%--%")
 ```
 ## 📸 Splunk Detection
 ![sql attack detect](screenshots/sql-attack-detect.png)
@@ -69,7 +68,7 @@ index=lab "/rest/user/login"
 ```
 
 ## 📸 Splunk Detection
-![Failed login](screenshots/Failed-login.png)
+![Failed login](screenshots/failed-login.png)
 ## 🧬 MITRE ATT&CK Mapping
 - T1190 – Exploit Public-Facing Application
 
