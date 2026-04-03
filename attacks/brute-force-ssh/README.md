@@ -37,7 +37,6 @@ High volume of failed login attempts
 Repeated attempts from the same source IP
 Successful authentication following multiple failures
 
-## 🔍 Detection in Splunk
 ### 🔐 Detect Failed Login Attempts
 ```spl
 index=lab "Failed password"
