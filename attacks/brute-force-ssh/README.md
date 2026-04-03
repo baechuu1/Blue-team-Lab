@@ -45,7 +45,7 @@ index=lab "Failed password"
 ```
 ![Failed Password Attempt](screenshots/Failed-password-attempt.png)
 
-###🚨 Detect Successful Login After Failures
+### 🚨 Detect Successful Login After Failures
 ```spl
 index=lab "Accepted password"
 ```
