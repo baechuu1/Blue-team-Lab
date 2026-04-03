@@ -32,13 +32,13 @@ hydra -l <username> -P password.txt ssh://<target-ip>
 ```
 ![Hydra Attack](screenshots/hydra-attack.png)
 
-🔎 Key Observations
+## 🔎 Key Observations
 High volume of failed login attempts
 Repeated attempts from the same source IP
 Successful authentication following multiple failures
 
-🔍 Detection in Splunk
-🔐 Detect Failed Login Attempts
+## 🔍 Detection in Splunk
+### 🔐 Detect Failed Login Attempts
 ```spl
 index=lab "Failed password"
 | stats count by rhost, user
@@ -46,7 +46,7 @@ index=lab "Failed password"
 ```
 ![Failed Password Attempt](screenshots/Failed-password-attempt.png)
 
-🚨 Detect Successful Login After Failures
+###🚨 Detect Successful Login After Failures
 ```spl
 index=lab "Accepted password"
 ```
