@@ -56,6 +56,11 @@ index=lab "Accepted password"
 - **T1110 – Brute Force**
 
 ---
+## 🛡️ Security Control Mapping
+### NIST 800-53
+- AU-6 – Audit Log Review
+- SI-4 – Continuous Monitoring
+- IR-4 – Incident Response
 
 ## 🛡️ Mitigation & Defense
 
